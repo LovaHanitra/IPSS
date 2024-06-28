@@ -38,9 +38,9 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="js/leaflet-search.js"></script>
-        <script src="data/Limitecommunaleavoisinante_0.js"></script>
-        <script src="data/LimitecommunaleMitsinjo_1.js"></script>
-        <script src="data/LimiteDistrict_2.js"></script>
+        <script src="data/Limitecommunaleavoisinante_1.js"></script>
+        <script src="data/LimitecommunaleMitsinjo_2.js"></script>
+        <script src="data/LimiteDistrict_3.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -60,7 +60,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-16.607820219534997,45.09357743931435],[-15.719572816448133,47.28588367211593]]);
+        }).fitBounds([[-16.799522754853943,44.86001031465462],[-15.909645821319533,47.05439193326497]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -108,7 +108,20 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        function pop_Limitecommunaleavoisinante_0(feature, layer) {
+        map.createPane('pane_OSMStandard_0');
+        map.getPane('pane_OSMStandard_0').style.zIndex = 400;
+        var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OSMStandard_0',
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_OSMStandard_0;
+        map.addLayer(layer_OSMStandard_0);
+        function pop_Limitecommunaleavoisinante_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -192,9 +205,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Limitecommunaleavoisinante_0_0() {
+        function style_Limitecommunaleavoisinante_1_0() {
             return {
-                pane: 'pane_Limitecommunaleavoisinante_0',
+                pane: 'pane_Limitecommunaleavoisinante_1',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -205,21 +218,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Limitecommunaleavoisinante_0');
-        map.getPane('pane_Limitecommunaleavoisinante_0').style.zIndex = 400;
-        map.getPane('pane_Limitecommunaleavoisinante_0').style['mix-blend-mode'] = 'normal';
-        var layer_Limitecommunaleavoisinante_0 = new L.geoJson(json_Limitecommunaleavoisinante_0, {
+        map.createPane('pane_Limitecommunaleavoisinante_1');
+        map.getPane('pane_Limitecommunaleavoisinante_1').style.zIndex = 401;
+        map.getPane('pane_Limitecommunaleavoisinante_1').style['mix-blend-mode'] = 'normal';
+        var layer_Limitecommunaleavoisinante_1 = new L.geoJson(json_Limitecommunaleavoisinante_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Limitecommunaleavoisinante_0',
-            layerName: 'layer_Limitecommunaleavoisinante_0',
-            pane: 'pane_Limitecommunaleavoisinante_0',
-            onEachFeature: pop_Limitecommunaleavoisinante_0,
-            style: style_Limitecommunaleavoisinante_0_0,
+            dataVar: 'json_Limitecommunaleavoisinante_1',
+            layerName: 'layer_Limitecommunaleavoisinante_1',
+            pane: 'pane_Limitecommunaleavoisinante_1',
+            onEachFeature: pop_Limitecommunaleavoisinante_1,
+            style: style_Limitecommunaleavoisinante_1_0,
         });
-        bounds_group.addLayer(layer_Limitecommunaleavoisinante_0);
-        map.addLayer(layer_Limitecommunaleavoisinante_0);
-        function pop_LimitecommunaleMitsinjo_1(feature, layer) {
+        bounds_group.addLayer(layer_Limitecommunaleavoisinante_1);
+        map.addLayer(layer_Limitecommunaleavoisinante_1);
+        function pop_LimitecommunaleMitsinjo_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -304,9 +317,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_LimitecommunaleMitsinjo_1_0() {
+        function style_LimitecommunaleMitsinjo_2_0() {
             return {
-                pane: 'pane_LimitecommunaleMitsinjo_1',
+                pane: 'pane_LimitecommunaleMitsinjo_2',
                 opacity: 1,
                 color: 'rgba(243,35,35,1.0)',
                 dashArray: '',
@@ -317,9 +330,9 @@
                 interactive: true,
             }
         }
-        function style_LimitecommunaleMitsinjo_1_1() {
+        function style_LimitecommunaleMitsinjo_2_1() {
             return {
-                pane: 'pane_LimitecommunaleMitsinjo_1',
+                pane: 'pane_LimitecommunaleMitsinjo_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -332,21 +345,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_LimitecommunaleMitsinjo_1');
-        map.getPane('pane_LimitecommunaleMitsinjo_1').style.zIndex = 401;
-        map.getPane('pane_LimitecommunaleMitsinjo_1').style['mix-blend-mode'] = 'normal';
-        var layer_LimitecommunaleMitsinjo_1 = new L.geoJson.multiStyle(json_LimitecommunaleMitsinjo_1, {
+        map.createPane('pane_LimitecommunaleMitsinjo_2');
+        map.getPane('pane_LimitecommunaleMitsinjo_2').style.zIndex = 402;
+        map.getPane('pane_LimitecommunaleMitsinjo_2').style['mix-blend-mode'] = 'normal';
+        var layer_LimitecommunaleMitsinjo_2 = new L.geoJson.multiStyle(json_LimitecommunaleMitsinjo_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_LimitecommunaleMitsinjo_1',
-            layerName: 'layer_LimitecommunaleMitsinjo_1',
-            pane: 'pane_LimitecommunaleMitsinjo_1',
-            onEachFeature: pop_LimitecommunaleMitsinjo_1,
-            styles: [style_LimitecommunaleMitsinjo_1_0,style_LimitecommunaleMitsinjo_1_1,]
+            dataVar: 'json_LimitecommunaleMitsinjo_2',
+            layerName: 'layer_LimitecommunaleMitsinjo_2',
+            pane: 'pane_LimitecommunaleMitsinjo_2',
+            onEachFeature: pop_LimitecommunaleMitsinjo_2,
+            styles: [style_LimitecommunaleMitsinjo_2_0,style_LimitecommunaleMitsinjo_2_1,]
         });
-        bounds_group.addLayer(layer_LimitecommunaleMitsinjo_1);
-        map.addLayer(layer_LimitecommunaleMitsinjo_1);
-        function pop_LimiteDistrict_2(feature, layer) {
+        bounds_group.addLayer(layer_LimitecommunaleMitsinjo_2);
+        map.addLayer(layer_LimitecommunaleMitsinjo_2);
+        function pop_LimiteDistrict_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -380,9 +393,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_LimiteDistrict_2_0() {
+        function style_LimiteDistrict_3_0() {
             return {
-                pane: 'pane_LimiteDistrict_2',
+                pane: 'pane_LimiteDistrict_3',
                 opacity: 1,
                 color: 'rgba(35,35,243,1.0)',
                 dashArray: '',
@@ -393,25 +406,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_LimiteDistrict_2');
-        map.getPane('pane_LimiteDistrict_2').style.zIndex = 402;
-        map.getPane('pane_LimiteDistrict_2').style['mix-blend-mode'] = 'normal';
-        var layer_LimiteDistrict_2 = new L.geoJson(json_LimiteDistrict_2, {
+        map.createPane('pane_LimiteDistrict_3');
+        map.getPane('pane_LimiteDistrict_3').style.zIndex = 403;
+        map.getPane('pane_LimiteDistrict_3').style['mix-blend-mode'] = 'normal';
+        var layer_LimiteDistrict_3 = new L.geoJson(json_LimiteDistrict_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_LimiteDistrict_2',
-            layerName: 'layer_LimiteDistrict_2',
-            pane: 'pane_LimiteDistrict_2',
-            onEachFeature: pop_LimiteDistrict_2,
-            style: style_LimiteDistrict_2_0,
+            dataVar: 'json_LimiteDistrict_3',
+            layerName: 'layer_LimiteDistrict_3',
+            pane: 'pane_LimiteDistrict_3',
+            onEachFeature: pop_LimiteDistrict_3,
+            style: style_LimiteDistrict_3_0,
         });
-        bounds_group.addLayer(layer_LimiteDistrict_2);
-        map.addLayer(layer_LimiteDistrict_2);
+        bounds_group.addLayer(layer_LimiteDistrict_3);
+        map.addLayer(layer_LimiteDistrict_3);
         var baseMaps = {};
         var overlaysTree = [
-            {label: '<img src="legend/LimiteDistrict_2.png" /> Limite District', layer: layer_LimiteDistrict_2},
-            {label: '<img src="legend/LimitecommunaleMitsinjo_1.png" /> Limite communale Mitsinjo', layer: layer_LimitecommunaleMitsinjo_1},
-            {label: '<img src="legend/Limitecommunaleavoisinante_0.png" /> Limite communale avoisinante', layer: layer_Limitecommunaleavoisinante_0},]
+            {label: '<img src="legend/LimiteDistrict_3.png" /> Limite District', layer: layer_LimiteDistrict_3},
+            {label: '<img src="legend/LimitecommunaleMitsinjo_2.png" /> Limite communale Mitsinjo', layer: layer_LimitecommunaleMitsinjo_2},
+            {label: '<img src="legend/Limitecommunaleavoisinante_1.png" /> Limite communale avoisinante', layer: layer_Limitecommunaleavoisinante_1},
+            {label: "OSM Standard", layer: layer_OSMStandard_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -424,12 +438,12 @@
         lay.addTo(map);
         setBounds();
         var i = 0;
-        layer_Limitecommunaleavoisinante_0.eachLayer(function(layer) {
+        layer_Limitecommunaleavoisinante_1.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Legende'] !== null?String('<div style="color: #323232; font-size: 11pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Legende']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Limitecommunaleavoisinante_0'});
+            layer.bindTooltip((layer.feature.properties['Legende'] !== null?String('<div style="color: #323232; font-size: 11pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Legende']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Limitecommunaleavoisinante_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -437,12 +451,12 @@
               i++;
         });
         var i = 0;
-        layer_LimiteDistrict_2.eachLayer(function(layer) {
+        layer_LimiteDistrict_3.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['District'] !== null?String('<div style="color: #ffffff; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['District']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_LimiteDistrict_2'});
+            layer.bindTooltip((layer.feature.properties['District'] !== null?String('<div style="color: #ffffff; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['District']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_LimiteDistrict_3'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -450,21 +464,21 @@
               i++;
         });
         map.addControl(new L.Control.Search({
-            layer: layer_Limitecommunaleavoisinante_0,
+            layer: layer_Limitecommunaleavoisinante_1,
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'Etiquette'}));
         document.getElementsByClassName('search-button')[0].className +=
          ' fa fa-binoculars';
-        resetLabels([layer_Limitecommunaleavoisinante_0,layer_LimitecommunaleMitsinjo_1,layer_LimiteDistrict_2]);
+        resetLabels([layer_Limitecommunaleavoisinante_1,layer_LimitecommunaleMitsinjo_2,layer_LimiteDistrict_3]);
         map.on("zoomend", function(){
-            resetLabels([layer_Limitecommunaleavoisinante_0,layer_LimitecommunaleMitsinjo_1,layer_LimiteDistrict_2]);
+            resetLabels([layer_Limitecommunaleavoisinante_1,layer_LimitecommunaleMitsinjo_2,layer_LimiteDistrict_3]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Limitecommunaleavoisinante_0,layer_LimitecommunaleMitsinjo_1,layer_LimiteDistrict_2]);
+            resetLabels([layer_Limitecommunaleavoisinante_1,layer_LimitecommunaleMitsinjo_2,layer_LimiteDistrict_3]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Limitecommunaleavoisinante_0,layer_LimitecommunaleMitsinjo_1,layer_LimiteDistrict_2]);
+            resetLabels([layer_Limitecommunaleavoisinante_1,layer_LimitecommunaleMitsinjo_2,layer_LimiteDistrict_3]);
         });
         </script>
     </body>
